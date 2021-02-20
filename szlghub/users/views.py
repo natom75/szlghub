@@ -19,3 +19,7 @@ def register(request):
 @login_required
 def profile(request):
 	return render(request, 'user/profile.html')
+
+def getPic(request):
+	img = models.profile
+	return render(request, 'user/profile.html',{"img":img, 'media_url':settings.MEDIA_URL})

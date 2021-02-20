@@ -1,4 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 	<h1>{{ user.username }}</h1>
+	<a href="/"><button>Browse</button></a>
+	<a href="/logout"><button>Logout</button></a>
+	<img src="{{media_url}}{{ i.image }}">
 {% endblock content %}
