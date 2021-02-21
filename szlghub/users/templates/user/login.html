@@ -10,10 +10,13 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 	</head>
 	<div style="margin-top:50px; text-align: center">
-		<form method="POST">
-			{% csrf_token %}
-			{{ form.as_p }}
-			<button type="submit">Login</button>
-		</form>
+		<div style="width: 14%; margin: auto; text-align: left; border: 1px solid black; padding: 5px">
+			<form method="POST">
+				{% csrf_token %}
+				{{ form.as_p }}
+				<button type="submit">Login</button>
+				<span>Don't have an Account? <a href="/register">Sign Up</a></span>
+			</form>
+		</div>
 	</div>
 {% endblock content %}
