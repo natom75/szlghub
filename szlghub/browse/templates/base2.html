@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title }}</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sticky-footer-navbar/">
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+		<div class="container-fluid">
+		  <div class="navbar-brand">SzlgHub</div>
+		</div>
+    </nav>
+
+    <div>why are you seeing this</div>
+    <div>this is just bullshit</div>
+    
+    <div>{% block content %}{% endblock %}</div>
+    
+    <div>
+	{% if messages %}
+		{% for message in messages %}
+			<div>{{ message }}</div>
+		{% endfor %}
+	{% endif %}
+	</div>
+</body>
+</html>
