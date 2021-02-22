@@ -16,38 +16,45 @@
 		}
 		</style>
 	</head>
-	<body>
-	<div class="container" style="margin-top:50px; border: 1px solid black" >
-		<div class="row">
-		  <div class="col-sm-4" style="border: 1px solid black">
-			<h2>Profile picture</h2>
-			<img src="{{ user.profile.image.url }}" height="200px" style="border: 1px solid black">
-			<p style="color: red">Please do not use your penis as your profile picture</p>
-			<h3>Personal info:</h3>
-			<h4>Username:</h4>
-			<p>{{ user.username }}</p> 
-			<h4>First name:</h4>
-			<p>{{ user.first_name }}</p>
-			<h4>Last name:</h4>
-			<p>{{ user.last_name }}</p>
-			<h4>Email address:</h4>
-			<p>{{ user.email }}</p>	
-		  </div>
-		  <div class="col-sm-8" style="border: 1px solid black">
-			<h2>Description</h2>
-			<div style="border: 1px solid black">{{ user.profile.desc }}</div>
-			<p>Make it short cuz django no like hosszú szöveg</p>
-			<form method="POST" enctype="multipart/form-data">
-				{% csrf_token %}
-				<fieldset class="form-group">
-				{{ u_form|crispy }}
-				{{ p_form|crispy }}
-				</fieldset>
-				<button type="submit">Update</button>
-				<p>* why cant i remove this fucking star</p>
-			</form>
-		  </div>
-		  
+	<body style="background-color: lightgray">
+	<div class="container" style="margin-top:50px; border: 1px solid black; background-color: white">
+		<div>
+			<h1>Personal information</h1>
+			<div style="float: left; width: 40%">
+				<p></p>
+				<div style="width: 250px; height: 250px; border: 1px solid black; object-fit:fill; overflow: hidden">
+					<img src="{{ user.profile.image.url }}" style="width: 100%; height: 100%">
+				</div>
+				<p style="height: 20px"></p>
+				<h3>{{ user.first_name }} {{ user.last_name }}, {{user.profile.year_in_school}}.{{user.profile.class_in_school}}</h3>
+				<h4 style="font-style: italic">alias "{{ user.username }}"</h4>
+				<p style="height: 20px"></p>
+				<h5>Email (not visible to users): <p style="font-style: italic">{{ user.email }}</p></h5>
+				<p></p>
+			</div>
+			<div style="float: left; width: 60%; height: 600px">
+				<p></p>
+				<div style="height: 250px; border: 1px solid black">
+					<p>{{ user.profile.desc }}</p>
+				</div>
+			</div>
+		</div>
+		<div style="width: 100%; height: 1px; border: 1px solid black"></div>
+		<div>
+			<div>
+				<h1>Edit personal information</h1>
+				<div style="width: 100%; height: 1px; border: 1px solid black"></div>
+				<form method="POST" enctype="multipart/form-data">
+					{% csrf_token %}
+					<fieldset class="form-group">
+					{{ u_form|crispy }}
+					{{ p_form|crispy }}
+					</fieldset>
+					<button type="submit">Update</button>
+					<span>*: Do not leave empty, may break the site completely</span>
+					<p style="height: 50px"></p>
+				</form>
+			</div>
 		</div>
 	</div> 
 	</body>
