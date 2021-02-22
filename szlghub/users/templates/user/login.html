@@ -16,18 +16,18 @@
 				<form method="POST">
 					{% csrf_token %}
 					<fieldset class="form-group">
-						<legend class="border-bottom mb-4">Log In</legend>
+						<legend>Log In</legend>
+						<div style="width: 100%; height: 1px; border: 1px solid black"></div>
 						{{ form|crispy }}
 					</fieldset>
 					<div class="form-group">
-						<button class="btn btn-outline-info" type="submit">Login</button>
+						<button type="submit">Login</button>
 					</div>
 				</form>
-				<div class="border-top pt-3">
+				<div style="width: 100%; height: 1px; border: 1px solid black"></div>
 					<small class="text-muted">
-						Need An Account? <a class="ml-2" href="/register">Sign Up Now</a>
+						Need An Account? <a href="/register">Sign Up Now</a>
 					</small>
-				</div>
 			</div>
 		</div>
 	</div>

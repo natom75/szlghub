@@ -38,14 +38,5 @@ def profile(request):
 
 	return render(request, 'user/profile.html', context)
 
-def faq(request):
-	return render(request, 'user/faq.html')
-
-def terms(request):
-	return render(request, 'user/terms.html')
-
-def privacy(request):
-	return render(request, 'user/privacy.html')
-
-def disclaimer(request):
-	return render(request, 'user/disclaimer.html')
+def about(request):
+	return render(request, 'user/about.html')
