@@ -1,8 +1,34 @@
-{% extends "base.html" %}
+{% extends "base2.html" %}
+{% load crispy_forms_tags %}
 {% block content %}
-	<form method="POST">
-		{% csrf_token %}
-		{{ form.as_p }}
-		<button type="submit">Login</button>
-	</form>
+	<h1>{{ title }}</h1>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	</head>
+	<div style="margin-top:50px; text-align: center">
+		<div style="width: 14%; margin: auto; text-align: left; border: 1px solid black; padding: 5px">
+			<div class="content-section">
+				<form method="POST">
+					{% csrf_token %}
+					<fieldset class="form-group">
+						<legend>Log In</legend>
+						<div style="width: 100%; height: 1px; border: 1px solid black"></div>
+						{{ form|crispy }}
+					</fieldset>
+					<div class="form-group">
+						<button type="submit">Login</button>
+					</div>
+				</form>
+				<div style="width: 100%; height: 1px; border: 1px solid black"></div>
+					<small class="text-muted">
+						Need An Account? <a href="/register">Sign Up Now</a>
+					</small>
+			</div>
+		</div>
+	</div>
 {% endblock content %}

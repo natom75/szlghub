@@ -1,8 +1,33 @@
-{% extends "base.html" %}
+{% extends "base2.html" %}
+{% load crispy_forms_tags %}
 {% block content %}
-	<form method="POST">
-		{% csrf_token %}
-		{{ form.as_p }}
-		<button type="submit">Sign Up</button>
-	</form>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	</head>
+	<div style="margin-top:50px; text-align: center">
+		<div style="width: 35%; margin: auto; text-align: left; border: 1px solid black; padding: 5px">
+			<div class="content-section">
+				<form method="POST">
+					{% csrf_token %}
+					<fieldset class="form-group">
+						<legend class="border-bottom mb-4">Join Today</legend>
+						{{ form|crispy }}
+					</fieldset>
+					<div class="form-group">
+						<button class="btn btn-outline-info" type="submit">Sign Up</button>
+					</div>
+				</form>
+				<div class="border-top pt-3">
+					<small class="text-muted">
+						Already Have An Account? <a class="ml-2" href="/login">Sign In</a>
+					</small>
+				</div>
+			</div>
+		</div>
+	</div>
 {% endblock content %}
