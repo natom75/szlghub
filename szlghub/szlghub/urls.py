@@ -13,6 +13,7 @@ urlpatterns = [
 	path('logout/', auth_views.LogoutView.as_view(template_name='user/logout.html'), name='logout'),
 	path('about/', user_views.about, name='about'),
 	path('browse/', user_views.browse, name='browse'),
+	path('table/', user_views.table, name='table'),
 	path('', include('browse.urls')),
 ]
 

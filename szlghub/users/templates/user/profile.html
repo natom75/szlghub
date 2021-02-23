@@ -29,9 +29,9 @@
 				<h3>{{ user.first_name }} {{ user.last_name }}, {{user.profile.year_in_school}}.{{user.profile.class_in_school}}</h3>
 				<h4 style="font-style: italic">alias "{{ user.username }}"</h4>
 				<p style="height: 20px"></p>
-				<h5>Email (not visible to users): <p style="font-style: italic">{{ user.email }}</p></h5>
-				<p style="height: 20px"></p>
-				<h5>Points: <p style="font-style: italic">{{ user.profile.points }}</p></h5>
+				<h5>Email: <p style="font-style: italic">{{ user.email }}</p></h5>
+				<!--<p style="height: 20px"></p>
+				<h5>Points: <p style="font-style: italic">{{ user.profile.points }}</p></h5>-->
 				<p></p>
 			</div>
 			<div style="float: left; width: 60%; height: 600px">
@@ -53,7 +53,7 @@
 					{{ p_form|crispy }}
 					</fieldset>
 					<button type="submit">Update</button>
-					<span>*: Do not leave empty, may break the site completely</span>
+					<span>*: Do not leave empty</span>
 					<p style="height: 50px"></p>
 				</form>
 			</div>

@@ -49,3 +49,9 @@ def browse(request):
 		'Profile':Profile.objects.order_by("?").first()
 	}
 	return render(request, 'user/browse.html', context)
+
+def table(request):
+	context = {
+		'Profile':Profile.objects.all()
+	}
+	return render(request, 'user/table.html', context)
