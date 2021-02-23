@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 from .models import Profile
+import random
 
 
 def register(request):
@@ -45,6 +46,6 @@ def about(request):
 
 def browse(request):
 	context = {
-		'users': Profile.objects.all()
+		'Profile':Profile.objects.order_by("?").first()
 	}
 	return render(request, 'user/browse.html', context)
