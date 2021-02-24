@@ -23,21 +23,19 @@
 			<div style="float: left; width: 40%">
 				<p></p>
 				<div style="width: 250px; height: 250px; border: 1px solid black; object-fit:fill; overflow: hidden">
-					<img src="{{ user.profile.image.url }}" style="width: 100%; height: 100%">
+					<img src="{{ user.profile.image.url }}" style="width: 100%; height: 100%"> <!--current user's data-->
 				</div>
 				<p style="height: 20px"></p>
-				<h3>{{ user.first_name }} {{ user.last_name }}, {{user.profile.year_in_school}}.{{user.profile.class_in_school}}</h3>
-				<h4 style="font-style: italic">alias "{{ user.username }}"</h4>
+				<h3>{{ user.first_name }} {{ user.last_name }}, {{user.profile.year_in_school}}.{{user.profile.class_in_school}}</h3> <!--current user's data-->
+				<h4 style="font-style: italic">alias "{{ user.username }}"</h4> <!--current user's data-->
 				<p style="height: 20px"></p>
-				<h5>Email: <p style="font-style: italic">{{ user.email }}</p></h5>
-				<!--<p style="height: 20px"></p>
-				<h5>Points: <p style="font-style: italic">{{ user.profile.points }}</p></h5>-->
+				<h5>Email: <p style="font-style: italic">{{ user.email }}</p></h5> <!--current user's data-->
 				<p></p>
 			</div>
 			<div style="float: left; width: 60%; height: 600px">
 				<p></p>
 				<div style="height: 250px; border: 1px solid black">
-					<p>{{ user.profile.desc }}</p>
+					<p>{{ user.profile.desc }}</p> <!--current user's data-->
 				</div>
 			</div>
 		</div>
@@ -49,10 +47,10 @@
 				<form method="POST" enctype="multipart/form-data">
 					{% csrf_token %}
 					<fieldset class="form-group">
-					{{ u_form|crispy }}
-					{{ p_form|crispy }}
+					{{ u_form|crispy }} <!--edit user's data-->
+					{{ p_form|crispy }} <!--edit user's data-->
 					</fieldset>
-					<button type="submit">Update</button>
+					<button type="submit">Update</button> <!--update user data-->
 					<span>*: Do not leave empty</span>
 					<p style="height: 50px"></p>
 				</form>

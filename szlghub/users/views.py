@@ -6,7 +6,7 @@ from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 from .models import Profile
 import random
 
-
+#register page
 def register(request):
 	if request.method == 'POST':
 		form = UserCreationForm(request.POST)
@@ -19,6 +19,7 @@ def register(request):
 		form = UserCreationForm()
 	return render(request, 'user/register.html', {'form': form, 'title':'register'})
 
+#edit profile data (user+profile)
 @login_required
 def profile(request):
 	if request.method == 'POST':
@@ -41,15 +42,18 @@ def profile(request):
 
 	return render(request, 'user/profile.html', context)
 
+#about page init
 def about(request):
 	return render(request, 'user/about.html')
 
+#about page init + get random user
 def browse(request):
 	context = {
 		'Profile':Profile.objects.order_by("?").first()
 	}
 	return render(request, 'user/browse.html', context)
 
+#about page init + get all users
 def table(request):
 	context = {
 		'Profile':Profile.objects.all()

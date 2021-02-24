@@ -19,7 +19,7 @@
                   <th>Class</th>
                   <th>Email address</th>
                 </tr>
-		        {% for Profile in Profile %}
+		        {% for Profile in Profile %} <!--get all users-->
                 <tr>
                     <td>{{ Profile.user.first_name }}</td>
                     <td>{{ Profile.user.last_name }}</td>

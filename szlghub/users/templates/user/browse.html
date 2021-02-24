@@ -15,24 +15,20 @@
       <div style="float: left; width: 40%">
           <p></p>
           <div style="width: 250px; height: 250px; border: 1px solid black; object-fit:fill; overflow: hidden">
-            <img src="{{ Profile.user.profile.image.url }}" style="width: 100%; height: 100%">
+            <img src="{{ Profile.user.profile.image.url }}" style="width: 100%; height: 100%"> <!--random user's data-->
           </div>
           <p style="height: 20px"></p>
-          <h3>{{ Profile.user.first_name }} {{ Profile.user.last_name }}, {{Profile.user.profile.year_in_school}}.{{Profile.user.profile.class_in_school}}</h3>
-          <h4 style="font-style: italic">alias "{{ Profile.user.username }}"</h4>
+          <h3>{{ Profile.user.first_name }} {{ Profile.user.last_name }}, {{Profile.user.profile.year_in_school}}.{{Profile.user.profile.class_in_school}}</h3> <!--random user's data-->
+          <h4 style="font-style: italic">alias "{{ Profile.user.username }}"</h4> <!--random user's data-->
           <p style="height: 20px"></p>
-          <h5>Email: <p style="font-style: italic">{{ Profile.user.email }}</p></h5>
+          <h5>Email: <p style="font-style: italic">{{ Profile.user.email }}</p></h5> <!--random user's data-->
       </div>
       <div style="float: left; width: 60%; height: 500px">
         <p></p>
         <div style="height: 250px; border: 1px solid black">
-          <p>{{ Profile.user.profile.desc }}</p>
+          <p>{{ Profile.user.profile.desc }}</p> <!--random user's data-->
         </div>
       </div>
    </div>
-   <!--<div class="container" style="margin-top:50px; border: 1px solid black; background-color: white; height: 50px; padding: 0">
-   <span style="float: left; height:50px; margin-left: 0"><button style="height: 48px; width: 300px; font-size: 25px" onclick="window.location.href='/browse'">Like</button></span>
-   <span style="float: right; height:50px; margin-right: 0"><button style="height: 48px; width: 300px; font-size: 25px" onclick="window.location.href='/browse'">Dislike</button></span>
-   </div>-->
   </body>
 {% endblock content %}
